@@ -12,7 +12,7 @@ import {
   formatPokedexNumber,
 } from '../services/pokeApi';
 import {
-  formatTemperatureMagnitude,
+  formatTemperature,
   isNegativeTemperature,
 } from '../services/temperature';
 import { PokeballIcon } from './PokeballIcon';
@@ -97,7 +97,7 @@ function MiniPokemonCell({
         <div className="flex items-center justify-end gap-1.5 font-mono text-sm font-semibold text-slate-900 tabular-nums">
           {isNegative && <PokeballIcon className="w-3.5 h-3.5 shrink-0" />}
           <span>
-            {formatTemperatureMagnitude(temperature)}
+            {formatTemperature(temperature)}
             {temperatureSymbol}
           </span>
         </div>

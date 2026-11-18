@@ -5,7 +5,7 @@ import {
   formatPokedexNumber,
   getTypeAccentHex,
 } from '../services/pokeApi';
-import { formatTemperatureMagnitude } from '../services/temperature';
+import { formatTemperature } from '../services/temperature';
 import type { PokemonRecord } from '../types/weather';
 
 interface PokemonDetailModalProps {
@@ -81,7 +81,7 @@ export function PokemonDetailModal({
             <span className="font-medium text-slate-700 truncate">{contextLabel}</span>
             <span aria-hidden="true">·</span>
             <span className="font-mono tabular-nums whitespace-nowrap">
-              {formatTemperatureMagnitude(rawTemperature)}
+              {formatTemperature(rawTemperature)}
               {temperatureSymbol} → {formatPokedexNumber(floored)}
             </span>
           </div>

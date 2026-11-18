@@ -7,9 +7,11 @@ export function isNegativeTemperature(temperature: number): boolean {
 }
 
 /**
- * Absolute value of a reading, formatted to one decimal place (e.g. -2.34 -> "2.3").
- * The sign is dropped on purpose: negative readings are displayed as their magnitude.
+ * Formats a reading for display with one decimal place, keeping the minus sign.
+ * Example: -2.34 -> "−2.3", 9.8 -> "9.8".
+ * The Pokédex index is still derived from the absolute value (see floorTemperatureToPokedexId).
  */
-export function formatTemperatureMagnitude(temperature: number): string {
-  return Math.abs(temperature).toFixed(1);
+export function formatTemperature(temperature: number): string {
+  const magnitude = Math.abs(temperature).toFixed(1);
+  return isNegativeTemperature(temperature) ? `−${magnitude}` : magnitude;
 }

@@ -375,7 +375,7 @@ export default function App() {
             <PokeballIcon className="w-5 h-5 shrink-0 mt-0.5" />
             <p>
               <span className="font-semibold text-slate-900">Negative temperatures.</span>{' '}
-              A reading below zero is shown as its absolute value, marked with a Pokéball, and displayed in a negative (inverted) color scheme. For example, -2.3° shows as 2.3° and matches #002 Ivysaur.
+              A reading below zero keeps its minus sign, is marked with a Pokéball, and is displayed in a negative (inverted) color scheme. Its Pokédex number comes from the absolute value, so −2.3° shows as −2.3° and matches #002 Ivysaur.
             </p>
           </div>
         </section>

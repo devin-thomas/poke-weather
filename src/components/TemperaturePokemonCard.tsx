@@ -6,7 +6,7 @@ import {
   getTypeAccentHex,
 } from '../services/pokeApi';
 import {
-  formatTemperatureMagnitude,
+  formatTemperature,
   isNegativeTemperature,
 } from '../services/temperature';
 import { NegativeReadingBadge } from './PokeballIcon';
@@ -80,7 +80,7 @@ export function TemperaturePokemonCard({
             </div>
           )}
           <div className="font-mono text-3xl sm:text-4xl font-semibold tracking-tight text-slate-900 tabular-nums">
-            {formatTemperatureMagnitude(temperature)}
+            {formatTemperature(temperature)}
             <span className="text-xl text-slate-500 font-normal ml-0.5">
               {temperatureSymbol}
             </span>
@@ -105,7 +105,7 @@ export function TemperaturePokemonCard({
         ) : pokemon ? (
           <>
             <div
-              className="relative w-28 h-28 sm:w-32 sm:h-32 rounded-xl flex items-center justify-center shrink-0 overflow-hidden"
+              className="relative w-24 h-24 sm:w-32 sm:h-32 rounded-xl flex items-center justify-center shrink-0 overflow-hidden"
               style={{
                 background: `radial-gradient(circle at 50% 55%, ${accentHex}14 0%, #F8FAFC 72%)`,
               }}
@@ -116,7 +116,7 @@ export function TemperaturePokemonCard({
                   alt={`${pokemon.displayName} official Pokédex artwork (#${pokemon.id})`}
                   referrerPolicy="no-referrer"
                   onError={() => setImageError(true)}
-                  className="w-24 h-24 sm:w-28 sm:h-28 object-contain transition-transform duration-200 hover:scale-105"
+                  className="w-20 h-20 sm:w-28 sm:h-28 object-contain transition-transform duration-200 hover:scale-105"
                 />
               ) : (
                 <div className="flex flex-col items-center justify-center text-center px-2">
@@ -141,7 +141,7 @@ export function TemperaturePokemonCard({
                 {pokemon.displayName}
               </h3>
 
-              <div className="flex items-center gap-4 pt-1 text-xs">
+              <div className="flex flex-wrap items-center gap-x-4 gap-y-1 pt-1 text-xs">
                 <button
                   type="button"
                   onClick={() => onInspectPokemon(pokemon, label, temperature)}

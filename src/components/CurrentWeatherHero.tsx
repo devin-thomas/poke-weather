@@ -16,7 +16,7 @@ import {
   getTypeAccentHex,
 } from '../services/pokeApi';
 import {
-  formatTemperatureMagnitude,
+  formatTemperature,
   isNegativeTemperature,
 } from '../services/temperature';
 import { NegativeReadingBadge } from './PokeballIcon';
@@ -174,7 +174,7 @@ export function CurrentWeatherHero({
               </div>
               <div className="flex items-baseline gap-1.5">
                 <span className="font-mono text-6xl sm:text-7xl font-semibold tracking-tight text-slate-900 tabular-nums leading-none">
-                  {formatTemperatureMagnitude(current.temperature)}
+                  {formatTemperature(current.temperature)}
                 </span>
                 <span className="font-mono text-3xl text-slate-400 font-normal">
                   {temperatureSymbol}
@@ -183,7 +183,7 @@ export function CurrentWeatherHero({
               <p className="mt-3 text-sm text-slate-600">
                 Decimal discarded:{' '}
                 <span className="font-mono font-semibold text-slate-900 tabular-nums">
-                  {formatTemperatureMagnitude(current.temperature)}
+                  {formatTemperature(current.temperature)}
                   {temperatureSymbol}
                 </span>{' '}
                 floors to{' '}
@@ -208,7 +208,7 @@ export function CurrentWeatherHero({
             <div>
               <dt className="text-xs text-slate-500">Feels like</dt>
               <dd className="mt-1 font-mono text-base font-semibold text-slate-900 tabular-nums">
-                {formatTemperatureMagnitude(current.apparentTemperature)}
+                {formatTemperature(current.apparentTemperature)}
                 {temperatureSymbol}
               </dd>
             </div>
